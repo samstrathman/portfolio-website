@@ -1,10 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+:root {
+  --primary-color: #19231a;
+  --secondary-color: #5b7553;
+}
+
 * {
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: Helvetica, sans-serif;
+  font-family: 'Poppins', Helvetica, sans-serif;
   scrollbar-gutter: stable both-edges;
 }
 
@@ -15,33 +22,34 @@ body {
   left: 0;  
   width: 100%;
   height: 46px;
-  justify-content: flex-end;               
+  justify-content: flex-end;  
+  align-items: center;    
   background-color: white;
-  gap: 20px;
   z-index: 100;
 }
 
 .navbar a {
-  color: black;
+  color: var(--primary-color);
   font-weight: bold;
   text-decoration: none;
-  padding: 14px 5px 0 0;
+  padding: 10px;
 }
 
 .navbar a:hover {
   background: #ddd; 
+  transition: all 0.3s;
 }
+
 
 #about-section, #projects-section, #contact-section {
-  scroll-margin-top: 35px;
+  scroll-margin-top: 40px;
 }
 
-/*
 .name {
   margin-right: auto;
-  padding: 9px 0 0 9px;
+  padding: 10px;
+  color: var(--primary-color);
 }
-*/
 
 .hi {
   display: block;  
@@ -51,6 +59,7 @@ body {
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
+  color: var(--primary-color);
 }
 
 .hi p {
@@ -63,17 +72,14 @@ body {
   width: 100vw;
   object-fit: cover;
   display: block;
-}
-
-.spacer {
-  height: 20px;
-  background-color: black;
+  border-bottom: 4px solid var(--primary-color);
 }
 
 #about-me-title {
   text-align: center;
   padding: 20px;
   font-size: 2em;
+  color: var(--primary-color);
 }
 
 .about-me {
@@ -81,12 +87,15 @@ body {
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
+  color: var(--primary-color);
 }
 
 #sam-img {
   width: 275px;
   object-fit: cover;
   border-radius: 50%;
+  margin-right: 15px;
+  border: 3px solid var(--primary-color);
   order: 1;
 }
 
@@ -96,10 +105,14 @@ body {
   order: 2;
   padding: 25px;
 }
-  
+
+p.indent {
+  text-indent: 50px;
+}
+
 #about-section:after, #projects-section:after {
   content: "";
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--primary-color);;
   display: block;
   margin: auto;
   margin-top: 25px;
@@ -110,51 +123,47 @@ body {
 
 #projects-title {
   text-align: center;
-  padding: 20px;
+  padding-bottom: 10px;
   font-size: 2em;
-}
-/*
-#proj-container-wrap {
-  max-width: 400px;
-  margin: auto;
+  color: var(--primary-color);
 }
 
-#projects {
+.projects-container {
+  margin: auto;
+  max-width: 800px;
   display: flex;
-  justify-content: center;
-  flex-direction: row;
-  padding-bottom: 20px;
+  align-items: center;
   flex-wrap: wrap;
+  justify-content: center;
+  color: var(--primary-color);
 }
 
-.project-tile { 
-  border: 1px solid black;
-  margin: 5px;
-  max-width: 180px;
-  flex-direction: column;
-  border-radius: 10px;
-  position: relative;
+.project-tile {
+  width: 350px;
+  height: 300px;
+  margin: 20px;
+  border: 1px solid var(--primary-color);
+  background-color: var(--primary-color);
+  text-decoration: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-#projects-section p {
-  padding: 25px;
-}
-
-.proj-label {
-  text-align: center;
-  margin-top: 5px;
-}
-
-.proj-img {
-  display: block;
-  width: 90%;
-  margin: auto;
-  margin-top: 10px;
-  border: 1px solid #260701;
-  border-radius: 10px;
+.project-img {
+  width: 100%;
+  height: 257px;
   object-fit: cover;
+  display: block;
 }
-*/
+
+.project-desc {
+  text-align: center;
+  padding: 10px 20px;
+  color: white;
+}
+
+#see-more {
+  padding-bottom: 10px;
+}
 
 .link-container {
   bottom: 0;
@@ -168,15 +177,19 @@ body {
 
 .proj-link {
   padding: 2px;
-  color: #012b15;
+  color: var(--primary-color);
   font-weight: bold;
   text-decoration: none;
   border: 1px solid grey;
   border-radius: 3px;
 }
 
+#see-more {
+  text-align: center;
+  margin: 30px;
+}
+
 #contact-section {
-  margin-top: 38px;
   margin-bottom: 15px;
   text-align: center;
 }
@@ -184,6 +197,13 @@ body {
 #contact-me {
   font-size: 1.5em;
   padding-bottom: 1em;
+  color: var(--primary-color);
+}
+
+#my-email {
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--secondary-color);
 }
 
 .contact-links {
@@ -197,13 +217,25 @@ body {
   margin: auto;
 }
 
+#email-me {
+  color: var(--primary-color);
+}
+
 .social-link {
   text-decoration: none;
-  color: black;
+  color: var(--secondary-color);;
   font-weight: bold;
 }
 
 footer {
-  background-color: black;
-  height: 20px;
+  background-color: var(--primary-color);
+  height: 25px;
+}
+
+#copyright {
+  font-size: .65em;
+  color: white;
+  text-align: right;
+  padding-top: 4px;
+  padding-right: 10px;
 }
